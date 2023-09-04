@@ -15,12 +15,14 @@ export const MoviesList = ({ movies }) => {
       {movies.map(({ id, poster_path, title }) => (
         <StyledItem key={id}>
           <GlobalStyledLink to={`/movies/${id}`} state={{ from: location }}>
-            <GlobalStyledImage
-              $marginBottom="3px"
-              src={`https://image.tmdb.org/t/p/w500${poster_path}`}
-              alt=""
-            />
-            <GlobalStyledH2 $fontSize="15px">{title}</GlobalStyledH2>
+            <ImageWrapper>
+              <StyledImage
+                $marginBottom="3px"
+                src={`https://image.tmdb.org/t/p/w500${poster_path}`}
+                alt=""
+              />
+            </ImageWrapper>
+            <StyledTitle $fontSize="15px">{title}</StyledTitle>
           </GlobalStyledLink>
         </StyledItem>
       ))}
@@ -41,5 +43,24 @@ export const StyledItem = styled.li`
 
   @media screen and (min-width: 1200px) {
     width: calc((100% - 45px) / 4);
+  }
+`;
+
+export const StyledTitle = styled(GlobalStyledH2)`
+  text-align: left;
+`;
+
+export const ImageWrapper = styled.div`
+  margin-bottom: 5px;
+  overflow: hidden;
+  border-radius: 3px;
+`;
+
+export const StyledImage = styled(GlobalStyledImage)`
+  transform: scale(1.03);
+  transition: transform 0.5s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
   }
 `;

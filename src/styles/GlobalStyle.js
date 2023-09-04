@@ -11,7 +11,7 @@ export const GlobalStyle = createGlobalStyle`
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
   font-weight: normal;
-  line-height: 1.4;
+  line-height: 1.3;
   letter-spacing: 0.02em;
   color: ${({ theme }) => theme.colors.$primiryTextColor};
   background-color: ${({ theme }) => theme.colors.$primiryBgColor};

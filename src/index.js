@@ -10,7 +10,7 @@ import { Reset } from 'styles/Reset';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <>
-    <BrowserRouter basename="/adaptive-website-World-News">
+    <BrowserRouter basename="/adaptive-website-All-Homework">
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Reset />

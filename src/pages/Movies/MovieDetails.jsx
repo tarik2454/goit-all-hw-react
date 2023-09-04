@@ -40,7 +40,7 @@ export const MovieDetails = () => {
           alt=""
         />
         <StyledContent>
-          <GlobalStyledH2>{movie.title}</GlobalStyledH2>
+          <StyledTitle>{movie.title}</StyledTitle>
           <p style={{ marginBottom: '12px' }}>{movie.overview}</p>
           <GlobalStyledButton onClick={() => navigate(backLink.current)}>
             {/* <GlobalStyledLink to={backLink.current}>Go back</GlobalStyledLink> */}
@@ -64,4 +64,8 @@ export const StyledImage = styled(GlobalStyledImage)`
 export const StyledContent = styled.div`
   display: flex;
   flex-direction: column;
+`;
+
+export const StyledTitle = styled(GlobalStyledH2)`
+  text-align: left;
 `;
