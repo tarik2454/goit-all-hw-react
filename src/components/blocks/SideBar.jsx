@@ -24,5 +24,5 @@ export const StyledSideBar = styled.div`
 
 export const StyledContent = styled.div`
   position: fixed;
-  width: 100px;
+  width: 160px;
 `;

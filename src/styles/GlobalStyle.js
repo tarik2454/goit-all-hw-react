@@ -1,6 +1,6 @@
 import { createGlobalStyle, styled } from 'styled-components';
 import { Link, NavLink } from 'react-router-dom';
-import '@csstools/normalize.css';
+import 'modern-normalize';
 
 export const GlobalStyle = createGlobalStyle`
   body {

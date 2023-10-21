@@ -31,13 +31,19 @@ export const Navigation = () => {
             </li>
             {isExpanded && (
               <>
-                <li>
-                  <GlobalStyledNavLink to="/top-movies">
+                <li style={{ marginLeft: '7px' }}>
+                  <GlobalStyledNavLink
+                    style={{ fontSize: '14px' }}
+                    to="/top-movies"
+                  >
                     Top movies
                   </GlobalStyledNavLink>
                 </li>
-                <li>
-                  <GlobalStyledNavLink to="/search-movies">
+                <li style={{ marginLeft: '7px' }}>
+                  <GlobalStyledNavLink
+                    style={{ fontSize: '14px' }}
+                    to="/search-movies"
+                  >
                     Search Movies
                   </GlobalStyledNavLink>
                 </li>
