@@ -5,8 +5,8 @@ const theme = {
 
     $primiryTextColor: '#393737',
     $secondaryTextColor: '#424141',
-    $primiryBgColor: '#e6eef3',
-    $secondaryBgColor: '#fff',
+    $primiryBgColor: '#FFFFFF',
+    $secondaryBgColor: '#FFFBF3',
 
     $accentColor: '#437aa5',
   },

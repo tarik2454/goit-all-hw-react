@@ -123,33 +123,25 @@ export const GlobalStyledNavLink = styled(NavLink)`
 `;
 
 export const GlobalStyledMain = styled.main`
-  width: calc(100% - 200px);
-  min-height: calc(100vh - 40px);
-  background-color: ${({ theme }) => theme.colors.$white};
+  min-height: calc(100vh - 50px);
+  padding-top: 50px;
 `;
 
-export const GlobalStyledSection = styled.section`
-  padding: 15px 20px;
-  background-color: ${({ theme }) => theme.colors.$secondaryBgColor};
-  /* border-radius: ${({ theme }) => theme.$borderRadius}; */
-`;
+export const GlobalStyledSection = styled.section``;
 
 export const GlobalStyledContainer = styled.div`
-  display: flex;
-  margin: 0 auto;
-  padding: 0 20px;
-
-  @media screen and (min-width: 480px) {
-    max-width: 480px;
-  }
+  width: 100%;
+  margin: 0px auto;
+  max-width: 375px;
+  padding: 0 18px;
 
   @media screen and (min-width: 768px) {
     max-width: 768px;
-    padding: 0 30px;
+    padding: 0 32px;
   }
 
-  @media screen and (min-width: 1200px) {
-    max-width: 1200px;
-    padding: 0 30px;
+  @media screen and (min-width: 1440px) {
+    max-width: 1440px;
+    padding: 0 160px;
   }
 `;

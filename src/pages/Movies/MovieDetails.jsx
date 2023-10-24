@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
-import { getMovieDetails } from 'services/api-services';
+import { getMovieDetails } from 'services/Movies/movies-api-services';
 import { styled } from 'styled-components';
 import {
   GlobalStyledButton,

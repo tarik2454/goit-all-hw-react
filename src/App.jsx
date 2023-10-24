@@ -1,6 +1,6 @@
-import { Layout } from 'components/Layout';
-import { Cast } from 'components/ui/Movies/Cast';
-import { Reviews } from 'components/ui/Movies/Reviews';
+import { Layout } from 'components/Layout/Layout';
+import { Cast } from 'components/Movies/Cast';
+import { Reviews } from 'components/Movies/Reviews';
 import { Contacts } from 'pages/Contacts';
 import { Home } from 'pages/Home';
 import { MovieDetails } from 'pages/Movies/MovieDetails';

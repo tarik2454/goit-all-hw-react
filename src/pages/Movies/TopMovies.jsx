@@ -1,6 +1,6 @@
-import { MoviesList } from 'components/ui/Movies/MoviesList';
+import { MoviesList } from 'components/Movies/MoviesList';
 import React, { useEffect, useState } from 'react';
-import { getTrendingMovies } from 'services/api-services';
+import { getTrendingMovies } from 'services/Movies/movies-api-services';
 
 import { GlobalStyledH1, GlobalStyledSection } from 'styles/GlobalStyle';
 

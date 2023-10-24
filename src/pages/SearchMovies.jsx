@@ -1,7 +1,7 @@
-import { MoviesList } from 'components/ui/Movies/MoviesList';
+import { MoviesList } from 'components/Movies/MoviesList';
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { getMovieByName } from 'services/api-services';
+import { getMovieByName } from 'services/Movies/movies-api-services';
 import { styled } from 'styled-components';
 import {
   GlobalStyledH1,
@@ -19,6 +19,7 @@ export const SearchMovies = () => {
     if (!value) {
       return;
     }
+
     async function fetchMovieByName() {
       try {
         const data = await getMovieByName(value);
