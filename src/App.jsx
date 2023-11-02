@@ -9,6 +9,7 @@ import { TopMovies } from 'pages/Movies/TopMovies';
 import { NotFound } from 'pages/NotFound';
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
+import HomeMovies from 'pages/Movies/HomeMovies';
 
 export const App = () => {
   return (
@@ -16,6 +17,7 @@ export const App = () => {
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
 
+        <Route path="/home-movies" element={<HomeMovies />} />
         <Route path="/top-movies" element={<TopMovies />} />
         <Route path="/search-movies" element={<SearchMovies />} />
         <Route path="/movies/:movieId" element={<MovieDetails />}>

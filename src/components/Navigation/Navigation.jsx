@@ -1,7 +1,8 @@
 import { SpriteSVG } from 'assets/images/SpriteSVG';
 import React, { useEffect, useRef, useState } from 'react';
-import { GlobalStyledNavLink } from 'styles/GlobalStyle';
+import { GlobalStyledLink, GlobalStyledNavLink } from 'styles/GlobalStyle';
 import {
+  StyledItem,
   StyledList,
   StyledListInner,
   StyledNavigation,
@@ -11,81 +12,100 @@ import {
 export const Navigation = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const menuRef = useRef(null);
+  const navItemsRef = [useRef(null), useRef(null), useRef(null)];
 
   const handleToggle = () => {
     setIsExpanded(!isExpanded);
   };
 
-  // useEffect(() => {
-  //   console.log(isExpanded);
-  // }, [isExpanded]);
+  const handleClick = (event, index) => {
+    event.preventDefault();
+
+    navItemsRef.forEach((itemRef, i) => {
+      if (i === index) {
+        itemRef.current.classList.add('active');
+      } else {
+        itemRef.current.classList.remove('active');
+      }
+    });
+  };
 
   useEffect(() => {
-    // console.log(isExpanded);
-
-    // Обработчик клика на всем документе
     const handleDocumentClick = event => {
-      // console.log(event);
-      // console.log(event.currentTarget);
-      console.log(event.target);
-      console.log(menuRef.current);
-
-      // if (menuRef.current && !menuRef.current.contains(event.target)) {
-      //   setIsExpanded(false);
-      // }
+      if (!menuRef.current.contains(event.target)) {
+        setIsExpanded(false);
+      }
     };
 
-    // Добавляем обработчик при монтировании
     document.addEventListener('click', handleDocumentClick);
 
-    // Убираем обработчик при размонтировании
     return () => {
       document.removeEventListener('click', handleDocumentClick);
     };
-  }, [isExpanded]);
+  }, []);
 
   return (
     <StyledNavigation>
       <StyledList>
-        <li>
-          <GlobalStyledNavLink to="/">Home</GlobalStyledNavLink>
-        </li>
-        <li onClick={handleToggle}>
-          <GlobalStyledNavLink to="/top-movies">
-            Movies
-            <StyledSVG>
-              <SpriteSVG name={'down'} />
-            </StyledSVG>
+        <StyledItem>
+          <GlobalStyledNavLink
+            to="/"
+            ref={navItemsRef[0]}
+            onClick={e => handleClick(e, 0)}
+          >
+            Home
           </GlobalStyledNavLink>
+        </StyledItem>
+        <StyledItem ref={menuRef} onClick={handleToggle}>
+          <GlobalStyledNavLink
+            to="/home-movies"
+            ref={navItemsRef[1]}
+            onClick={e => handleClick(e, 1)}
+          >
+            Movies
+          </GlobalStyledNavLink>
+          <StyledSVG>
+            <SpriteSVG name={'down'} />
+          </StyledSVG>
           <StyledListInner
-            ref={menuRef}
             style={{
               display: isExpanded ? 'flex' : 'none',
             }}
           >
             <>
               <li>
-                <GlobalStyledNavLink
+                <GlobalStyledLink
                   style={{ fontSize: '14px' }}
-                  to="/top-movies"
+                  to="/home-movies"
                 >
-                  Top movies
-                </GlobalStyledNavLink>
+                  Home
+                </GlobalStyledLink>
               </li>
               <li>
-                <GlobalStyledNavLink
+                <GlobalStyledLink style={{ fontSize: '14px' }} to="/top-movies">
+                  Top movies
+                </GlobalStyledLink>
+              </li>
+              <li>
+                <GlobalStyledLink
                   style={{ fontSize: '14px' }}
                   to="/search-movies"
                 >
                   Search Movies
-                </GlobalStyledNavLink>
+                </GlobalStyledLink>
               </li>
             </>
           </StyledListInner>
-        </li>
-        <li>
-          <GlobalStyledNavLink to="/contacts">Contact</GlobalStyledNavLink>
-        </li>
+        </StyledItem>
+        <StyledItem>
+          <GlobalStyledNavLink
+            to="/contacts"
+            ref={navItemsRef[2]}
+            onClick={e => handleClick(e, 2)}
+          >
+            Contact
+          </GlobalStyledNavLink>
+        </StyledItem>
       </StyledList>
     </StyledNavigation>
   );

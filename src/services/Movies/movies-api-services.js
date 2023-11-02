@@ -8,7 +8,6 @@ const searchParams = new URLSearchParams({
 export const getTrendingMovies = async () => {
   const response = await fetch(`${BASE_URL}/trending/all/day?${searchParams}`);
   const data = await response.json();
-
   return data.results;
 };
 
@@ -17,14 +16,12 @@ export const getMovieByName = async name => {
     `${BASE_URL}/search/movie?${searchParams}&query=${name}`
   );
   const data = await response.json();
-
   return data.results;
 };
 
 export const getMovieDetails = async movieId => {
   const response = await fetch(`${BASE_URL}/movie/${movieId}?${searchParams}`);
   const data = await response.json();
-
   return data;
 };
 

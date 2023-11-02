@@ -11,6 +11,8 @@ export const StyledList = styled.ul`
   gap: 30px;
 `;
 
+export const StyledItem = styled.li``;
+
 export const StyledListInner = styled.ul`
   display: flex;
   flex-direction: column;
