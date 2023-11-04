@@ -1,15 +1,16 @@
+import React from 'react';
 import { Layout } from 'components/Layout/Layout';
-import { Cast } from 'components/Movies/Cast';
-import { Reviews } from 'components/Movies/Reviews';
 import { Contacts } from 'pages/Contacts';
 import { Home } from 'pages/Home';
-import { MovieDetails } from 'pages/Movies/MovieDetails';
-import { SearchMovies } from 'pages/SearchMovies';
-import { TopMovies } from 'pages/Movies/TopMovies';
+import { SearchMovies } from 'pages/Movies/SearchMovies';
 import { NotFound } from 'pages/NotFound';
-import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import HomeMovies from 'pages/Movies/HomeMovies';
+import { HomeMovies } from 'pages/Movies/HomeMovies';
+import { Cast } from './components/Movies/Cast/Cast';
+import { Reviews } from './components/Movies/Reviews/Reviews';
+import { TopMovies } from 'pages/Movies/TopMovies';
+import { styled } from 'styled-components';
+import { MovieDetails } from './pages/Movies/MovieDetails/MovieDetails';
 
 export const App = () => {
   return (
@@ -31,3 +32,26 @@ export const App = () => {
     </Routes>
   );
 };
+
+export const StyledList = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+`;
+
+export const StyledListItem = styled.li`
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    width: calc((100% - 2 * 15px) / 3);
+  }
+
+  @media screen and (min-width: 1400px) {
+    width: calc((100% - 3 * 15px) / 4);
+  }
+`;
+
+export const StyledImage = styled.img`
+  margin-bottom: 3px;
+  border-radius: ${props => props.theme.$borderRadius};
+`;

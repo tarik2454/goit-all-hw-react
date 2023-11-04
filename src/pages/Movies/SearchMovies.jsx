@@ -1,9 +1,11 @@
 import { MoviesList } from 'components/Movies/MoviesList';
+
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { getMovieByName } from 'services/Movies/movies-api-services';
 import { styled } from 'styled-components';
 import {
+  GlobalStyledContainer,
   GlobalStyledH1,
   GlobalStyledInput,
   GlobalStyledSection,
@@ -16,9 +18,9 @@ export const SearchMovies = () => {
   const [value, setValue] = useState(query);
 
   useEffect(() => {
-    if (!value) {
-      return;
-    }
+    // if (!query) {
+    //   return;
+    // }
 
     async function fetchMovieByName() {
       try {
@@ -30,7 +32,7 @@ export const SearchMovies = () => {
     }
 
     fetchMovieByName();
-  }, [value]);
+  }, [query, value]);
 
   const handleSearch = event => {
     event.preventDefault();
@@ -39,20 +41,22 @@ export const SearchMovies = () => {
 
   return (
     <GlobalStyledSection>
-      <GlobalStyledH1>SearchMovies</GlobalStyledH1>
+      <GlobalStyledContainer>
+        <GlobalStyledH1>SearchMovies</GlobalStyledH1>
 
-      <StyledForm onSubmit={handleSearch}>
-        <GlobalStyledInput
-          type="text"
-          value={value}
-          onChange={event => {
-            setValue(event.target.value);
-          }}
-          placeholder="Enter movie name..."
-        />
-      </StyledForm>
+        <StyledForm onSubmit={handleSearch}>
+          <GlobalStyledInput
+            type="text"
+            value={value}
+            onChange={event => {
+              setValue(event.target.value);
+            }}
+            placeholder="Enter movie name..."
+          />
+        </StyledForm>
 
-      <MoviesList movies={movies} />
+        <MoviesList movies={movies} />
+      </GlobalStyledContainer>
     </GlobalStyledSection>
   );
 };

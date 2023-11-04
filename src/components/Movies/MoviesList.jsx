@@ -30,6 +30,10 @@ export const MoviesList = ({ movies }) => {
   );
 };
 
+export const StyledTitle = styled(GlobalStyledH2)`
+  text-align: left;
+`;
+
 export const StyledList = styled.ul`
   display: flex;
   flex-wrap: wrap;
@@ -44,10 +48,6 @@ export const StyledItem = styled.li`
   @media screen and (min-width: 1200px) {
     width: calc((100% - 45px) / 4);
   }
-`;
-
-export const StyledTitle = styled(GlobalStyledH2)`
-  text-align: left;
 `;
 
 export const ImageWrapper = styled.div`

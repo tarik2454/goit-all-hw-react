@@ -1,8 +1,12 @@
-import { MoviesList } from 'components/Movies/MoviesList';
 import React, { useEffect, useState } from 'react';
-import { getTrendingMovies } from 'services/Movies/movies-api-services';
+import { getTrendingMovies } from '../../services/Movies/movies-api-services';
 
-import { GlobalStyledH1, GlobalStyledSection } from 'styles/GlobalStyle';
+import {
+  GlobalStyledContainer,
+  GlobalStyledH1,
+  GlobalStyledSection,
+} from 'styles/GlobalStyle';
+import { MoviesList } from 'components/Movies/MoviesList';
 
 export const TopMovies = () => {
   const [movies, setMovies] = useState([]);
@@ -22,8 +26,10 @@ export const TopMovies = () => {
 
   return (
     <GlobalStyledSection>
-      <GlobalStyledH1>Top movies</GlobalStyledH1>
-      <MoviesList movies={movies} />
+      <GlobalStyledContainer>
+        <GlobalStyledH1>Trending movies</GlobalStyledH1>
+        <MoviesList movies={movies} />
+      </GlobalStyledContainer>
     </GlobalStyledSection>
   );
 };

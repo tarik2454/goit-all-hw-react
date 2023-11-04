@@ -125,6 +125,7 @@ export const GlobalStyledNavLink = styled(NavLink)`
 export const GlobalStyledMain = styled.main`
   min-height: calc(100vh - 50px);
   padding-top: 50px;
+  padding-bottom: 50px;
 `;
 
 export const GlobalStyledSection = styled.section``;
