@@ -1,10 +1,5 @@
-import React from 'react';
-import { GlobalStyledH1, GlobalStyledSection } from 'styles/GlobalStyle';
+import { Section } from 'components/common/Section/Section';
 
 export const Contacts = () => {
-  return (
-    <GlobalStyledSection>
-      <GlobalStyledH1>Contacts</GlobalStyledH1>
-    </GlobalStyledSection>
-  );
+  return <Section title="Contacts" />;
 };

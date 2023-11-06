@@ -1,15 +1,11 @@
 import { MoviesList } from 'components/Movies/MoviesList';
+import { Section } from 'components/common/Section/Section';
 
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { getMovieByName } from 'services/Movies/movies-api-services';
 import { styled } from 'styled-components';
-import {
-  GlobalStyledContainer,
-  GlobalStyledH1,
-  GlobalStyledInput,
-  GlobalStyledSection,
-} from 'styles/GlobalStyle';
+import { GlobalStyledContainer, GlobalStyledInput } from 'styles/GlobalStyle';
 
 export const SearchMovies = () => {
   const [movies, setMovies] = useState([]);
@@ -40,10 +36,8 @@ export const SearchMovies = () => {
   };
 
   return (
-    <GlobalStyledSection>
+    <Section title="Search Movies">
       <GlobalStyledContainer>
-        <GlobalStyledH1>SearchMovies</GlobalStyledH1>
-
         <StyledForm onSubmit={handleSearch}>
           <GlobalStyledInput
             type="text"
@@ -57,7 +51,7 @@ export const SearchMovies = () => {
 
         <MoviesList movies={movies} />
       </GlobalStyledContainer>
-    </GlobalStyledSection>
+    </Section>
   );
 };
 

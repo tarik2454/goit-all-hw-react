@@ -4,8 +4,6 @@ import { getMovieDetails } from '../../../services/Movies/movies-api-services';
 import {
   GlobalStyledButton,
   GlobalStyledContainer,
-  GlobalStyledH1,
-  GlobalStyledSection,
 } from '../../../styles/GlobalStyle';
 import {
   StyledCard,
@@ -17,6 +15,7 @@ import {
   StyledInner,
   StyledNavLink,
 } from './MovieDetails.styled';
+import { Section } from 'components/common/Section/Section';
 
 export const MovieDetails = () => {
   const [movie, setMovie] = useState({});
@@ -39,7 +38,7 @@ export const MovieDetails = () => {
   const backLink = useRef(location.state?.from ?? '/');
 
   return (
-    <GlobalStyledSection>
+    <Section title={movie.title}>
       <GlobalStyledContainer>
         <GlobalStyledButton
           $padding="7px 10px"
@@ -50,7 +49,6 @@ export const MovieDetails = () => {
         </GlobalStyledButton>
         {/* <Link to={backLink}>Go back</Link> */}
 
-        <GlobalStyledH1>{movie.title}</GlobalStyledH1>
         <StyledCard>
           <StyledImage src={imageUrl} alt="" />
           <StyledInner>
@@ -79,6 +77,6 @@ export const MovieDetails = () => {
 
         <Outlet />
       </GlobalStyledContainer>
-    </GlobalStyledSection>
+    </Section>
   );
 };
