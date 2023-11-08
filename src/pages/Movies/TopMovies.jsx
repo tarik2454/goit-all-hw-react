@@ -5,7 +5,7 @@ import { GlobalStyledContainer } from 'styles/GlobalStyle';
 import { MoviesList } from 'components/Movies/MoviesList';
 import { Section } from 'components/common/Section/Section';
 
-export const TopMovies = () => {
+const TopMovies = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -29,3 +29,5 @@ export const TopMovies = () => {
     </Section>
   );
 };
+
+export default TopMovies;

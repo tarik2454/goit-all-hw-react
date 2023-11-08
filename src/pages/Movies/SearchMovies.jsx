@@ -7,7 +7,7 @@ import { getMovieByName } from 'services/Movies/movies-api-services';
 import { styled } from 'styled-components';
 import { GlobalStyledContainer, GlobalStyledInput } from 'styles/GlobalStyle';
 
-export const SearchMovies = () => {
+const SearchMovies = () => {
   const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('query') ?? '';
@@ -59,3 +59,5 @@ export const StyledForm = styled.form`
   display: flex;
   justify-content: center;
 `;
+
+export default SearchMovies;

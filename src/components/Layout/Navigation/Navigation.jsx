@@ -12,22 +12,9 @@ import {
 export const Navigation = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const menuRef = useRef(null);
-  const navItemsRef = [useRef(null), useRef(null), useRef(null)];
 
   const handleToggle = () => {
     setIsExpanded(!isExpanded);
-  };
-
-  const handleClick = (event, index) => {
-    event.preventDefault();
-
-    navItemsRef.forEach((itemRef, i) => {
-      if (i === index) {
-        itemRef.current.classList.add('active');
-      } else {
-        itemRef.current.classList.remove('active');
-      }
-    });
   };
 
   useEffect(() => {
@@ -48,22 +35,10 @@ export const Navigation = () => {
     <StyledNavigation>
       <StyledList>
         <StyledItem>
-          <GlobalStyledNavLink
-            to="/"
-            ref={navItemsRef[0]}
-            onClick={e => handleClick(e, 0)}
-          >
-            Home
-          </GlobalStyledNavLink>
+          <GlobalStyledNavLink to="/">Home</GlobalStyledNavLink>
         </StyledItem>
         <StyledItem ref={menuRef} onClick={handleToggle}>
-          <GlobalStyledNavLink
-            to="/home-movies"
-            ref={navItemsRef[1]}
-            onClick={e => handleClick(e, 1)}
-          >
-            Movies
-          </GlobalStyledNavLink>
+          <GlobalStyledNavLink to="/home-movies">Movies</GlobalStyledNavLink>
           <StyledSVG>
             <SpriteSVG name={'down'} />
           </StyledSVG>
@@ -98,13 +73,7 @@ export const Navigation = () => {
           </StyledListInner>
         </StyledItem>
         <StyledItem>
-          <GlobalStyledNavLink
-            to="/contacts"
-            ref={navItemsRef[2]}
-            onClick={e => handleClick(e, 2)}
-          >
-            Contact
-          </GlobalStyledNavLink>
+          <GlobalStyledNavLink to="/contacts">Contact</GlobalStyledNavLink>
         </StyledItem>
       </StyledList>
     </StyledNavigation>

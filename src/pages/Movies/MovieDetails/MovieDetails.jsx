@@ -17,7 +17,7 @@ import {
 } from './MovieDetails.styled';
 import { Section } from 'components/common/Section/Section';
 
-export const MovieDetails = () => {
+const MovieDetails = () => {
   const [movie, setMovie] = useState({});
   const navigate = useNavigate();
   const location = useLocation();
@@ -80,3 +80,5 @@ export const MovieDetails = () => {
     </Section>
   );
 };
+
+export default MovieDetails;

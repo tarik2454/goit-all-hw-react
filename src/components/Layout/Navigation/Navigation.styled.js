@@ -8,7 +8,7 @@ export const StyledNavigation = styled.nav`
 
 export const StyledList = styled.ul`
   display: flex;
-  gap: 30px;
+  gap: 50px;
 `;
 
 export const StyledItem = styled.li``;

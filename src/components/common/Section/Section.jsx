@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { styled } from 'styled-components';
 
 export const Section = ({ title, children }) => {
@@ -19,8 +18,3 @@ export const StyledSectionTitle = styled.h1`
   text-align: center;
   color: ${({ theme }) => theme.colors.$secondaryTextColor};
 `;
-
-Section.propTypes = {
-  title: PropTypes.string,
-  children: PropTypes.node,
-};

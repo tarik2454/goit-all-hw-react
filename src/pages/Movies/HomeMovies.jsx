@@ -1,5 +1,8 @@
+import { Section } from 'components/common/Section/Section';
 import React from 'react';
 
-export const HomeMovies = () => {
-  return <div>HomeMovies</div>;
+const HomeMovies = () => {
+  return <Section title="Home Movies" />;
 };
+
+export default HomeMovies;
