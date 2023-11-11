@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { getTrendingMovies } from '../../services/Movies/movies-api-services';
-
-import { GlobalStyledContainer } from 'styles/GlobalStyle';
 import { MoviesList } from 'components/Movies/MoviesList';
 import { Section } from 'components/common/Section/Section';
+import { Container } from 'components/common/Container/Container';
 
 const TopMovies = () => {
   const [movies, setMovies] = useState([]);
@@ -23,9 +22,9 @@ const TopMovies = () => {
 
   return (
     <Section title="Trending movies">
-      <GlobalStyledContainer>
+      <Container>
         <MoviesList movies={movies} />
-      </GlobalStyledContainer>
+      </Container>
     </Section>
   );
 };

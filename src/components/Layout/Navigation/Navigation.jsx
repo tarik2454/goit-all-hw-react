@@ -75,6 +75,11 @@ export const Navigation = () => {
         <StyledItem>
           <GlobalStyledNavLink to="/contacts">Contact</GlobalStyledNavLink>
         </StyledItem>
+        <StyledItem>
+          <GlobalStyledNavLink to="/leave-request">
+            Leave request
+          </GlobalStyledNavLink>
+        </StyledItem>
       </StyledList>
     </StyledNavigation>
   );

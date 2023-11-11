@@ -1,10 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Outlet, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { getMovieDetails } from '../../../services/Movies/movies-api-services';
-import {
-  GlobalStyledButton,
-  GlobalStyledContainer,
-} from '../../../styles/GlobalStyle';
+import { GlobalStyledButton } from '../../../styles/GlobalStyle';
 import {
   StyledCard,
   StyledCardDescription,
@@ -16,6 +13,7 @@ import {
   StyledNavLink,
 } from './MovieDetails.styled';
 import { Section } from 'components/common/Section/Section';
+import { Container } from 'components/common/Container/Container';
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState({});
@@ -39,7 +37,7 @@ const MovieDetails = () => {
 
   return (
     <Section title={movie.title}>
-      <GlobalStyledContainer>
+      <Container>
         <GlobalStyledButton
           $padding="7px 10px"
           $margin="0 0 15px 0"
@@ -76,7 +74,7 @@ const MovieDetails = () => {
         </StyledInfoList>
 
         <Outlet />
-      </GlobalStyledContainer>
+      </Container>
     </Section>
   );
 };

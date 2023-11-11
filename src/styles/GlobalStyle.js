@@ -127,22 +127,3 @@ export const GlobalStyledMain = styled.main`
   padding-top: 50px;
   padding-bottom: 50px;
 `;
-
-export const GlobalStyledSection = styled.section``;
-
-export const GlobalStyledContainer = styled.div`
-  width: 100%;
-  margin: 0px auto;
-  max-width: 375px;
-  padding: 0 18px;
-
-  @media screen and (min-width: 768px) {
-    max-width: 768px;
-    padding: 0 32px;
-  }
-
-  @media screen and (min-width: 1440px) {
-    max-width: 1440px;
-    padding: 0 160px;
-  }
-`;

@@ -16,6 +16,9 @@ const MovieDetails = lazy(() =>
 const Home = lazy(() => import('./pages/Home'));
 const SearchMovies = lazy(() => import('pages/Movies/SearchMovies'));
 const NotFound = lazy(() => import('pages/NotFound'));
+const LeaveRequestForm = lazy(() =>
+  import('pages/LeaveRequestForm/LeaveRequestForm')
+);
 
 export const App = () => {
   return (
@@ -31,6 +34,8 @@ export const App = () => {
             <Route path="cast" element={<Cast />} />
             <Route path="reviews" element={<Reviews />} />
           </Route>
+
+          <Route path="/leave-request" element={<LeaveRequestForm />} />
 
           <Route path="/contacts" element={<Contacts />} />
           <Route path="*" element={<NotFound />} />

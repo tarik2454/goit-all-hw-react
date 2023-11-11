@@ -1,16 +1,17 @@
-import React, { Suspense } from 'react';
+import { Suspense } from 'react';
 import { Header } from './Header';
-import { GlobalStyledContainer, GlobalStyledMain } from 'styles/GlobalStyle';
+import { GlobalStyledMain } from 'styles/GlobalStyle';
 import { Outlet } from 'react-router-dom';
 import { Navigation } from './Navigation/Navigation';
+import { Container } from 'components/common/Container/Container';
 
 export const Layout = ({ children }) => {
   return (
     <>
       <Header>
-        <GlobalStyledContainer>
+        <Container>
           <Navigation />
-        </GlobalStyledContainer>
+        </Container>
       </Header>
 
       <GlobalStyledMain>

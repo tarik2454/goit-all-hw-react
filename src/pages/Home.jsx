@@ -1,9 +1,9 @@
+import { Container } from 'components/common/Container/Container';
 import { Section } from 'components/common/Section/Section';
 import React from 'react';
 import { styled } from 'styled-components';
 import {
   GlobalStyledButton,
-  GlobalStyledContainer,
   GlobalStyledLink,
   GlobalStyledNavLink,
 } from 'styles/GlobalStyle';
@@ -11,7 +11,7 @@ import {
 const Home = () => {
   return (
     <Section title="React homework template">
-      <GlobalStyledContainer>
+      <Container>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
           blanditiis id, reiciendis et excepturi explicabo tenetur temporibus a
@@ -80,7 +80,7 @@ const Home = () => {
             Ducimus, aliquam similique!
           </StyledListItem>
         </StyledList>
-      </GlobalStyledContainer>
+      </Container>
     </Section>
   );
 };
