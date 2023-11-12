@@ -3,19 +3,17 @@ import { Section } from 'components/common/Section/Section';
 import { useEffect, useState } from 'react';
 import { addContact } from 'services/LeaveRequestForm/request-api-service';
 import {
-  StyledButtonRequest,
   StyledForm,
-  StyledInput,
   StyledInputWrapper,
-  StyledSectionTitle,
   StyledSpanError,
-  StyledTextarea,
   stylesSelect,
 } from './LeaveRequestForm.styled';
 import Select from 'react-select';
 import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
 import { dataFormat, dataServices } from 'data/LeaveRequestForm/data-request';
+import { Button } from 'components/common/Button/Button';
+import { Input, Textarea } from 'components/common/Input/Input';
 
 export default function LeaveRequestForm() {
   const [isLoading, setIsLoading] = useState(false);
@@ -155,12 +153,11 @@ export default function LeaveRequestForm() {
   };
 
   return (
-    <Section title="Leave Request">
+    <Section title="Залишити заявку">
       <Container>
-        <StyledSectionTitle>Залишити заявку</StyledSectionTitle>
         <StyledForm onSubmit={handleSubmit}>
           <StyledInputWrapper>
-            <StyledInput
+            <Input
               data-value
               type="text"
               aria-label="Ваше ім'я"
@@ -235,7 +232,7 @@ export default function LeaveRequestForm() {
             </StyledSpanError>
           </StyledInputWrapper>
 
-          <StyledTextarea
+          <Textarea
             type="text"
             aria-label="Ваше питання (до 500 символiв)"
             name="question"
@@ -245,7 +242,14 @@ export default function LeaveRequestForm() {
             onChange={handleCommentChange}
           />
 
-          <StyledButtonRequest type="submit">Відправити</StyledButtonRequest>
+          <Button
+            $width="100%"
+            $padding="10px 0"
+            $fontSize="18px"
+            $fontWeight="600"
+          >
+            Відправити
+          </Button>
         </StyledForm>
       </Container>
     </Section>

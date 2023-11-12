@@ -6,7 +6,6 @@ import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { getMovieByName } from 'services/Movies/movies-api-services';
 import { styled } from 'styled-components';
-import { GlobalStyledInput } from 'styles/GlobalStyle';
 
 const SearchMovies = () => {
   const [movies, setMovies] = useState([]);
@@ -40,7 +39,7 @@ const SearchMovies = () => {
     <Section title="Search Movies">
       <Container>
         <StyledForm onSubmit={handleSearch}>
-          <GlobalStyledInput
+          <StyledInput
             type="text"
             value={value}
             onChange={event => {
@@ -59,6 +58,23 @@ const SearchMovies = () => {
 export const StyledForm = styled.form`
   display: flex;
   justify-content: center;
+`;
+
+export const StyledInput = styled.input`
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  height: 35px;
+  margin-bottom: 20px;
+  padding: 5px 12px;
+  color: inherit;
+  border: 1px solid gray;
+  border-radius: ${({ theme }) => theme.input.$borderRadius};
+
+  &:focus {
+    outline: transparent;
+    border: 1px solid teal;
+  }
 `;
 
 export default SearchMovies;

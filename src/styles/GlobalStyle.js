@@ -60,22 +60,6 @@ export const GlobalStyledButton = styled.button`
   }
 `;
 
-export const GlobalStyledInput = styled.input`
-  width: 100%;
-  max-width: 400px;
-  height: 35px;
-  margin-bottom: 20px;
-  padding: 5px 12px;
-  color: inherit;
-  border: 1px solid gray;
-  border-radius: ${({ theme }) => theme.input.$borderRadius};
-
-  &:focus {
-    outline: transparent;
-    border: 1px solid teal;
-  }
-`;
-
 export const GlobalStyledLink = styled(Link)`
   display: inline-block;
   padding: ${props => props.$padding || '0 0'};
