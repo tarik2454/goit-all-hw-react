@@ -8,7 +8,7 @@ export const StyledInput = styled.input`
   display: block;
   width: 100%;
   max-width: ${props => props.$maxWidth || ''};
-  margin-bottom: ${props => props.$marginBottom || ''};
+  margin-bottom: ${props => props.$marginBottom || '4px'};
   padding: ${props => props.$padding || '14px 12px'};
   font-size: ${props => props.$fontSize || '16px'};
   font-weight: ${props => props.$fontWeight || '400'};
@@ -38,7 +38,7 @@ export const Textarea = ({ ...props }) => {
 
 export const StyledTextarea = styled.textarea`
   display: block;
-  height: 48px;
+  height: 50px;
   max-height: 220px;
   width: 100%;
   max-width: 344px;
@@ -55,7 +55,8 @@ export const StyledTextarea = styled.textarea`
   transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:focus {
-    outline: 2px solid var(--bg-primery);
+    border-color: ${({ theme }) => theme.colors.$accentColor};
+    outline: transparent;
   }
 
   &::placeholder {
@@ -75,7 +76,8 @@ export const StyledTextarea = styled.textarea`
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: var(--bg-brown); /* Цвет ползунка */
+    background-color: ${({ theme }) =>
+      theme.colors.$accentColor}; /* Цвет ползунка */
     border-radius: 5px; /* Скругление углов ползунка */
   }
 `;

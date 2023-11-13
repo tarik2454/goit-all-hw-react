@@ -1,5 +1,6 @@
+import PhoneInput from 'react-phone-number-input';
+import 'react-phone-number-input/style.css';
 import styled from 'styled-components';
-import Select from 'react-select';
 
 export const StyledForm = styled.form`
   width: 100%;
@@ -11,7 +12,51 @@ export const StyledForm = styled.form`
   }
 `;
 
-export const StyledInputWrapper = styled.div``;
+export const StyledPhoneInput = styled(PhoneInput)`
+  margin-bottom: 4px;
+  position: relative;
+
+  .PhoneInputInput {
+    padding: 14px 12px 14px 63px;
+    font-size: 16px;
+    line-height: 20px;
+    color: ${({ theme }) => theme.colors.$secondaryTextColor};
+    background-color: ${({ theme }) => theme.colors.$secondaryBgColor};
+    border: ${({ theme }) => theme.input.$border};
+    border-radius: ${({ theme }) => theme.input.$borderRadius};
+    outline: transparent;
+    transition: ${({ theme }) => theme.$transition};
+  }
+
+  .PhoneInputInput:focus {
+    outline: 1px solid #437aa5;
+  }
+
+  .PhoneInputCountry {
+    position: absolute !important;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+  }
+
+  .PhoneInputCountrySelectArrow {
+    /* color: ${({ theme }) => theme.colors.$accentColor}; */
+  }
+
+  .PhoneInputCountrySelect {
+    height: 59px;
+    width: 55px;
+    left: -13px;
+    top: -10px;
+  }
+
+  .PhoneInputCountrySelect option {
+    color: ${({ theme }) => theme.colors.$secondaryTextColor};
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+`;
 
 export const StyledSpanError = styled.span`
   display: block;
@@ -23,40 +68,6 @@ export const StyledSpanError = styled.span`
   color: #ca250e;
 `;
 
-export const StyledInput = styled.input`
-  display: block;
-  width: 100%;
-  margin-bottom: 4px;
-  padding: 14px 12px;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20px;
-  color: ${({ theme }) => theme.secondaryTextColor};
-  background-color: var(--bg-main);
-  border: none;
-  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
-
-  &:focus {
-    outline: 2px solid var(--bg-primery);
-  }
-
-  &::placeholder {
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 16px;
-    color: #979899;
-  }
-`;
-
-export const StyledSelect = styled(Select)`
-  /* Добавьте остальные стили здесь */
-  background-color: black;
-
-  &.option:hover {
-    background-color: red; // Цвет фона при наведении
-  }
-`;
-
 export const stylesSelect = {
   control: (baseStyles, state) => ({
     ...baseStyles,
@@ -64,31 +75,27 @@ export const stylesSelect = {
     padding: '7px 2px',
     backgroundColor: '#FFFBF3',
     border: 'none',
-    borderRadius: '0',
-    outline: '2px solid transparent',
-    outlineColor: state.isFocused ? 'var(--bg-primery)' : 'transparent',
+    borderRadius: '5px',
+    outline: '1px solid',
+    outlineColor: state.isFocused ? '#437aa5' : 'rgba(33, 33, 33, 0.2)',
     cursor: 'pointer',
-    transition: 'all 150ms cubic-bezier(0.4, 0, 0.2, 1)',
+    transition: 'all 250ms cubic-bezier(0.4, 0, 0.2, 1)',
   }),
 
   singleValue: (baseStyles, state) => ({
     ...baseStyles,
-    // fontFamily: 'ProximaNova-400',
     fontSize: '16px',
     fontWeight: 400,
     lineHeight: '20px',
-    color: 'var(--main-text)',
+    color: '#424141',
   }),
 
   placeholder: (baseStyles, state) => ({
     ...baseStyles,
-    // fontFamily: 'ProximaNova-500',
     fontSize: '16px',
     fontWeight: 500,
     lineHeight: '16px',
-    color: '#c5c1c1',
-    // outlineColor: state.isFocused ? 'var(--bg-primery)' : 'transparent',
-    transition: 'all 150ms cubic-bezier(0.4, 0, 0.2, 1)',
+    color: '#979899',
   }),
 
   indicatorSeparator: (baseStyles, state) => ({
@@ -98,7 +105,6 @@ export const stylesSelect = {
 
   dropdownIndicator: (baseStyles, state) => ({
     ...baseStyles,
-    // color: 'var(--primery-text)',
   }),
 
   menu: (baseStyles, state) => ({
@@ -107,7 +113,6 @@ export const stylesSelect = {
     marginTop: '17px',
     left: 'auto',
     fontSize: '46px',
-    // background: 'var(--bg-main)',
     borderRadius: '0',
     position: 'absolute',
     right: 0,
@@ -130,17 +135,15 @@ export const stylesSelect = {
 
   option: (baseStyles, state) => ({
     ...baseStyles,
-    fontFamily: 'ProximaNova-500',
     fontSize: '16px',
-    fontWeight: 500,
     lineHeight: '16px',
-    // color: 'var(--primery-text)',
-    backgroundColor: state.isSelected ? '#E1DEE5' : 'none',
+    color: state.isSelected ? '#424141' : '#393737',
+    backgroundColor: state.isSelected ? '#FFFBF3' : 'none',
     borderBottom: '1px solid rgba(136, 123, 121, 0.20)',
     cursor: 'pointer',
 
     ':hover': {
-      backgroundColor: '#E1DEE5',
+      backgroundColor: '#FFFBF3',
     },
 
     ':active': {

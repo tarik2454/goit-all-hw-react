@@ -4,13 +4,11 @@ import { useEffect, useState } from 'react';
 import { addContact } from 'services/LeaveRequestForm/request-api-service';
 import {
   StyledForm,
-  StyledInputWrapper,
+  StyledPhoneInput,
   StyledSpanError,
   stylesSelect,
 } from './LeaveRequestForm.styled';
 import Select from 'react-select';
-import PhoneInput from 'react-phone-number-input';
-import 'react-phone-number-input/style.css';
 import { dataFormat, dataServices } from 'data/LeaveRequestForm/data-request';
 import { Button } from 'components/common/Button/Button';
 import { Input, Textarea } from 'components/common/Input/Input';
@@ -137,6 +135,8 @@ export default function LeaveRequestForm() {
           format: formData.format.value,
         };
 
+        console.log(formDataForBackend);
+
         setIsLoading(true);
 
         const data = await addContact(formDataForBackend);
@@ -156,7 +156,7 @@ export default function LeaveRequestForm() {
     <Section title="Залишити заявку">
       <Container>
         <StyledForm onSubmit={handleSubmit}>
-          <StyledInputWrapper>
+          <div>
             <Input
               data-value
               type="text"
@@ -174,15 +174,14 @@ export default function LeaveRequestForm() {
             >
               {errors.name}
             </StyledSpanError>
-          </StyledInputWrapper>
+          </div>
 
-          <StyledInputWrapper>
-            <PhoneInput
+          <div>
+            <StyledPhoneInput
               aria-label="Ваш номер телефону"
               international
               countryCallingCodeEditable={false}
               defaultCountry="UA"
-              label="Украина"
               maxLength="50"
               value={formData.phone}
               onChange={handlePhoneChange}
@@ -194,9 +193,9 @@ export default function LeaveRequestForm() {
             >
               {errors.phone}
             </StyledSpanError>
-          </StyledInputWrapper>
+          </div>
 
-          <StyledInputWrapper>
+          <div>
             <Select
               aria-label="Оберіть послугу"
               styles={stylesSelect}
@@ -212,9 +211,9 @@ export default function LeaveRequestForm() {
             >
               {errors.service}
             </StyledSpanError>
-          </StyledInputWrapper>
+          </div>
 
-          <StyledInputWrapper>
+          <div>
             <Select
               aria-label="Оберіть формат"
               styles={stylesSelect}
@@ -230,7 +229,7 @@ export default function LeaveRequestForm() {
             >
               {errors.format}
             </StyledSpanError>
-          </StyledInputWrapper>
+          </div>
 
           <Textarea
             type="text"
