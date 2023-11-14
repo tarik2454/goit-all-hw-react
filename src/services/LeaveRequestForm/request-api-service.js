@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const BASE_URL = 'https://goit-all-hw-react-backend.onrender.com';
 
-export async function addContact(formData) {
+export async function postRequest(formData) {
   const options = {
     method: 'POST',
     headers: {

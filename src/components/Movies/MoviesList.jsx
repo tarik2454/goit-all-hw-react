@@ -45,7 +45,7 @@ export const StyledItem = styled.li`
     width: calc((100% - 30px) / 3);
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     width: calc((100% - 45px) / 4);
   }
 `;
@@ -53,7 +53,7 @@ export const StyledItem = styled.li`
 export const ImageWrapper = styled.div`
   margin-bottom: 5px;
   overflow: hidden;
-  border-radius: 3px;
+  border-radius: ${({ theme }) => theme.$borderRadius};
 `;
 
 export const StyledImage = styled(GlobalStyledImage)`

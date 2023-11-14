@@ -1,5 +1,7 @@
 import { MoviesList } from 'components/Movies/MoviesList';
 import { Container } from 'components/common/Container/Container';
+import { Form } from 'components/common/Form/Form';
+
 import { Section } from 'components/common/Section/Section';
 
 import React, { useEffect, useState } from 'react';
@@ -39,7 +41,8 @@ const SearchMovies = () => {
     <Section title="Search Movies">
       <Container>
         <StyledForm onSubmit={handleSearch}>
-          <StyledInput
+          <Form
+            as="input"
             type="text"
             value={value}
             onChange={event => {
@@ -56,25 +59,9 @@ const SearchMovies = () => {
 };
 
 export const StyledForm = styled.form`
-  display: flex;
-  justify-content: center;
-`;
-
-export const StyledInput = styled.input`
-  display: block;
   width: 100%;
   max-width: 400px;
-  height: 35px;
-  margin-bottom: 20px;
-  padding: 5px 12px;
-  color: inherit;
-  border: 1px solid gray;
-  border-radius: ${({ theme }) => theme.input.$borderRadius};
-
-  &:focus {
-    outline: transparent;
-    border: 1px solid teal;
-  }
+  margin: 0 auto;
 `;
 
 export default SearchMovies;

@@ -1,10 +1,17 @@
 import styled from 'styled-components';
 
-export const Input = ({ ...props }) => {
-  return <StyledInput {...props} />;
+export const Form = ({ as: FormElement = 'input', ...props }) => {
+  const StyledFormElement =
+    FormElement === 'input'
+      ? StyledInput
+      : FormElement === 'textarea'
+      ? StyledTextarea
+      : null;
+
+  return StyledFormElement ? <StyledFormElement {...props} /> : null;
 };
 
-export const StyledInput = styled.input`
+const StyledInput = styled.input`
   display: block;
   width: 100%;
   max-width: ${props => props.$maxWidth || ''};
@@ -32,11 +39,7 @@ export const StyledInput = styled.input`
   }
 `;
 
-export const Textarea = ({ ...props }) => {
-  return <StyledTextarea {...props} />;
-};
-
-export const StyledTextarea = styled.textarea`
+const StyledTextarea = styled.textarea`
   display: block;
   height: 50px;
   max-height: 220px;

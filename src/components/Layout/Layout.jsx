@@ -4,6 +4,7 @@ import { GlobalStyledMain } from 'styles/GlobalStyle';
 import { Outlet } from 'react-router-dom';
 import { Navigation } from './Navigation/Navigation';
 import { Container } from 'components/common/Container/Container';
+import { Loader } from 'components/common/Loader/Loader';
 
 export const Layout = ({ children }) => {
   return (
@@ -15,7 +16,7 @@ export const Layout = ({ children }) => {
       </Header>
 
       <GlobalStyledMain>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<Loader component="Suspense" />}>
           {children}
           <Outlet />
         </Suspense>
@@ -23,5 +24,3 @@ export const Layout = ({ children }) => {
     </>
   );
 };
-
-export default Layout;

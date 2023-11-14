@@ -1,7 +1,7 @@
 import { Container } from 'components/common/Container/Container';
 import { Section } from 'components/common/Section/Section';
 import { useEffect, useState } from 'react';
-import { addContact } from 'services/LeaveRequestForm/request-api-service';
+import { postRequest } from 'services/LeaveRequestForm/request-api-service';
 import {
   StyledForm,
   StyledPhoneInput,
@@ -11,7 +11,7 @@ import {
 import Select from 'react-select';
 import { dataFormat, dataServices } from 'data/LeaveRequestForm/data-request';
 import { Button } from 'components/common/Button/Button';
-import { Input, Textarea } from 'components/common/Input/Input';
+import { Form, Input, Textarea } from 'components/common/Form/Form';
 
 export default function LeaveRequestForm() {
   const [isLoading, setIsLoading] = useState(false);
@@ -139,7 +139,7 @@ export default function LeaveRequestForm() {
 
         setIsLoading(true);
 
-        const data = await addContact(formDataForBackend);
+        const data = await postRequest(formDataForBackend);
         if (data) {
           setIsLoading(false);
           handleFormReset();
@@ -157,7 +157,8 @@ export default function LeaveRequestForm() {
       <Container>
         <StyledForm onSubmit={handleSubmit}>
           <div>
-            <Input
+            <Form
+              as="input"
               data-value
               type="text"
               aria-label="Ваше ім'я"
@@ -231,7 +232,8 @@ export default function LeaveRequestForm() {
             </StyledSpanError>
           </div>
 
-          <Textarea
+          <Form
+            as="textarea"
             type="text"
             aria-label="Ваше питання (до 500 символiв)"
             name="question"
