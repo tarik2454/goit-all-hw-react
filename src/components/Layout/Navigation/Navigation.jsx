@@ -42,6 +42,7 @@ export const Navigation = () => {
           <StyledSVG>
             <SpriteSVG name={'down'} />
           </StyledSVG>
+
           <StyledListInner
             style={{
               display: isExpanded ? 'flex' : 'none',
