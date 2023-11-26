@@ -8,14 +8,14 @@ import { Reviews } from './components/Movies/Reviews/Reviews';
 import { Layout } from 'components/Layout/Layout';
 
 const HomeMovies = lazy(() => import('pages/Movies/HomeMovies'));
-const Contacts = lazy(() => import('pages/Contacts'));
+const Contacts = lazy(() => import('pages/Contacts/Contacts'));
 const TopMovies = lazy(() => import('pages/Movies/TopMovies'));
 const MovieDetails = lazy(() =>
   import('./pages/Movies/MovieDetails/MovieDetails')
 );
-const Home = lazy(() => import('./pages/Home'));
+const Home = lazy(() => import('./pages/Home/Home'));
 const SearchMovies = lazy(() => import('pages/Movies/SearchMovies'));
-const NotFound = lazy(() => import('pages/NotFound'));
+const NotFound = lazy(() => import('pages/NotFound/NotFound'));
 const LeaveRequestForm = lazy(() =>
   import('pages/LeaveRequestForm/LeaveRequestForm')
 );

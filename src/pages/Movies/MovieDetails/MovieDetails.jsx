@@ -12,8 +12,8 @@ import {
   StyledInner,
   StyledNavLink,
 } from './MovieDetails.styled';
-import { Section } from 'components/common/Section/Section';
-import { Container } from 'components/common/Container/Container';
+import { Section } from 'components/common/component/Section/Section';
+import { Container } from 'components/common/component/Container/Container';
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState({});

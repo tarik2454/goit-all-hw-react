@@ -1,4 +1,4 @@
-import { Section } from 'components/common/Section/Section';
+import { Section } from 'components/common/component/Section/Section';
 
 const Contacts = () => {
   return <Section title="Contacts" />;

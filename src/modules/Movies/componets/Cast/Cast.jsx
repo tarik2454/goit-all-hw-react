@@ -8,7 +8,7 @@ import {
   StyledCastList,
   StyledCastName,
 } from './Cast.styled';
-import { getCastMovie } from '../../../services/Movies/movies-api-services';
+import { getCastMovie } from '../../../../services/Movies/movies-api-services';
 
 export const Cast = () => {
   const [cast, setCast] = useState([]);

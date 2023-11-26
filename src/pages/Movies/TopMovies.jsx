@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { getTrendingMovies } from '../../services/Movies/movies-api-services';
-import { MoviesList } from 'components/Movies/MoviesList';
-import { Section } from 'components/common/Section/Section';
-import { Container } from 'components/common/Container/Container';
+import { MoviesList } from 'modules/Movies/componets/MoviesList/MoviesList';
+import { Section } from 'components/common/component/Section/Section';
+import { Container } from 'components/common/component/Container/Container';
 
 const TopMovies = () => {
   const [movies, setMovies] = useState([]);

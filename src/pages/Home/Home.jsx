@@ -1,5 +1,5 @@
-import { Container } from 'components/common/Container/Container';
-import { Section } from 'components/common/Section/Section';
+import { Container } from 'components/common/component/Container/Container';
+import { Section } from 'components/common/component/Section/Section';
 import React from 'react';
 import { styled } from 'styled-components';
 import {

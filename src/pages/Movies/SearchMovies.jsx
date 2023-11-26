@@ -1,8 +1,8 @@
-import { MoviesList } from 'components/Movies/MoviesList';
-import { Container } from 'components/common/Container/Container';
-import { Form } from 'components/common/Form/Form';
+import { MoviesList } from 'modules/Movies/componets/MoviesList/MoviesList';
+import { Container } from 'components/common/component/Container/Container';
+import { Form } from 'components/common/component/Form/Form';
 
-import { Section } from 'components/common/Section/Section';
+import { Section } from 'components/common/component/Section/Section';
 
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';

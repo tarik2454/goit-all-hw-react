@@ -1,5 +1,5 @@
-import { Container } from 'components/common/Container/Container';
-import { Section } from 'components/common/Section/Section';
+import { Container } from 'components/common/component/Container/Container';
+import { Section } from 'components/common/component/Section/Section';
 import { useEffect, useState } from 'react';
 import { postRequest } from 'services/LeaveRequestForm/request-api-service';
 import {
@@ -9,9 +9,12 @@ import {
   stylesSelect,
 } from './LeaveRequestForm.styled';
 import Select from 'react-select';
-import { dataFormat, dataServices } from 'data/LeaveRequestForm/data-request';
-import { Button } from 'components/common/Button/Button';
-import { Form, Input, Textarea } from 'components/common/Form/Form';
+import {
+  dataFormat,
+  dataServices,
+} from 'modules/LeaveRequestForm/data/data-request';
+import { Button } from 'components/common/component/Button/Button';
+import { Form, Input, Textarea } from 'components/common/component/Form/Form';
 
 export default function LeaveRequestForm() {
   const [isLoading, setIsLoading] = useState(false);
