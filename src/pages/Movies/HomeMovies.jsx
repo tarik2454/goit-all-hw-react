@@ -1,4 +1,4 @@
-import { Section } from 'components/common/component/Section/Section';
+import { Section } from 'components/common/components/Section/Section';
 import React from 'react';
 
 const HomeMovies = () => {

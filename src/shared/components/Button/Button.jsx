@@ -8,6 +8,7 @@ export const Button = ({ children, ...props }) => {
 const StyledButton = styled.button`
   display: block;
   width: ${props => props.$width || 'fit-content'};
+  margin: ${props => props.$margin || '0 0'};
   padding: ${props => props.$padding || '6px 8px'};
   font-size: ${props => props.$fontSize || '15px'};
   font-weight: ${props => props.$fontWeight || '400'};

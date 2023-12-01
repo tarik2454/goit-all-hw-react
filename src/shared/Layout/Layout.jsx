@@ -1,10 +1,9 @@
 import { Suspense } from 'react';
-import { Header } from './Header';
-import { GlobalStyledMain } from 'styles/GlobalStyle';
+import { Header } from './Header/Header';
 import { Outlet } from 'react-router-dom';
 import { Navigation } from './Navigation/Navigation';
-import { Container } from 'components/common/component/Container/Container';
-import { Loader } from 'components/common/component/Loader/Loader';
+import { Container } from '../../shared/components/Container/Container';
+import { Loader } from '../../shared/components/Loader/Loader';
 
 export const Layout = ({ children }) => {
   return (
@@ -15,12 +14,12 @@ export const Layout = ({ children }) => {
         </Container>
       </Header>
 
-      <GlobalStyledMain>
+      <main>
         <Suspense fallback={<Loader component="Suspense" />}>
           {children}
           <Outlet />
         </Suspense>
-      </GlobalStyledMain>
+      </main>
     </>
   );
 };

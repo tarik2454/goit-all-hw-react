@@ -1,7 +1,7 @@
-import { Container } from 'components/common/component/Container/Container';
-import { Section } from 'components/common/component/Section/Section';
+import { Container } from '../../shared/components/Container/Container';
+import { Section } from '../../shared/components/Section/Section';
 import { useEffect, useState } from 'react';
-import { postRequest } from 'services/LeaveRequestForm/request-api-service';
+import { postRequest } from '../../modules/LeaveRequestForm/services/request-api-service';
 import {
   StyledForm,
   StyledPhoneInput,
@@ -13,8 +13,8 @@ import {
   dataFormat,
   dataServices,
 } from 'modules/LeaveRequestForm/data/data-request';
-import { Button } from 'components/common/component/Button/Button';
-import { Form, Input, Textarea } from 'components/common/component/Form/Form';
+import { Button } from '../../shared/components/Button/Button';
+import { Form, Input, Textarea } from '../../shared/components/Form/Form';
 
 export default function LeaveRequestForm() {
   const [isLoading, setIsLoading] = useState(false);

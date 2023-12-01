@@ -1,12 +1,12 @@
 import { MoviesList } from 'modules/Movies/componets/MoviesList/MoviesList';
-import { Container } from 'components/common/component/Container/Container';
-import { Form } from 'components/common/component/Form/Form';
+import { Container } from '../../shared/components/Container/Container';
+import { Form } from '../../shared/components/Form/Form';
 
-import { Section } from 'components/common/component/Section/Section';
+import { Section } from '../../shared/components/Section/Section';
 
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { getMovieByName } from 'services/Movies/movies-api-services';
+import { getMovieByName } from '../../modules/Movies/services/movies-api-services';
 import { styled } from 'styled-components';
 
 const SearchMovies = () => {

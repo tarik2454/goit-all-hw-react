@@ -3,13 +3,13 @@ import { Route, Routes } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 import { styled } from 'styled-components';
 
-import { Cast } from './components/Movies/Cast/Cast';
-import { Reviews } from './components/Movies/Reviews/Reviews';
-import { Layout } from 'components/Layout/Layout';
+import { Cast } from './modules/Movies/componets/Cast/Cast';
+import { Reviews } from './modules/Movies/componets/Reviews/Reviews';
+import { Layout } from './shared/Layout/Layout';
 
-const HomeMovies = lazy(() => import('pages/Movies/HomeMovies'));
+const HomeMovies = lazy(() => import('./pages/Home/Home'));
 const Contacts = lazy(() => import('pages/Contacts/Contacts'));
-const TopMovies = lazy(() => import('pages/Movies/TopMovies'));
+const TopMovies = lazy(() => import('./pages/Movies/TopMovies'));
 const MovieDetails = lazy(() =>
   import('./pages/Movies/MovieDetails/MovieDetails')
 );

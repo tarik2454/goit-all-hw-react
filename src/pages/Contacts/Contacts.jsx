@@ -1,4 +1,4 @@
-import { Section } from 'components/common/component/Section/Section';
+import { Section } from '../../shared/components/Section/Section';
 
 const Contacts = () => {
   return <Section title="Contacts" />;

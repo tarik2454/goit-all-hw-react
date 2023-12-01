@@ -20,44 +20,18 @@ export const GlobalStyle = createGlobalStyle`
 
 export const GlobalStyledImage = styled.img`
   display: block;
-  width: 100%;
+  max-width: 100%;
   height: auto;
-  margin-bottom: ${props => props.$marginBottom || '20px'};
+  margin-bottom: ${props => props.$marginBottom || ''};
   object-fit: cover;
-`;
-
-export const GlobalStyledH1 = styled.h1`
-  margin-bottom: ${props => props.$marginBottom || '20px'};
-  font-size: ${props => props.$fontSize || '22px'};
-  font-weight: 600;
-  text-align: center;
-  color: ${({ theme }) => theme.colors.$secondaryTextColor};
 `;
 
 export const GlobalStyledH2 = styled.h2`
   margin-bottom: ${props => props.$marginBottom || '7px'};
   font-size: ${props => props.$fontSize || '17px'};
   font-weight: 500;
-  text-align: ${props => props.$textAling || 'center'};
+  text-align: ${props => props.$textAling || ''};
   color: ${({ theme }) => theme.colors.$secondaryTextColor};
-`;
-
-export const GlobalStyledButton = styled.button`
-  display: block;
-  width: fit-content;
-  padding: ${props => props.$padding || '6px 8px'};
-  font-size: ${props => props.$fontSize || '15px'};
-  color: ${({ theme }) => theme.colors.$white};
-  background-color: ${({ theme }) => theme.colors.$accentColor};
-  border: none;
-  border-radius: ${({ theme }) => theme.$borderRadius};
-  cursor: pointer;
-  transition: ${({ theme }) => theme.$transition};
-
-  &:hover {
-    color: ${({ theme }) => theme.colors.$black};
-    background-color: #0499c9;
-  }
 `;
 
 export const GlobalStyledLink = styled(Link)`
@@ -104,10 +78,4 @@ export const GlobalStyledNavLink = styled(NavLink)`
 
   &:hover:not(.active) {
   }
-`;
-
-export const GlobalStyledMain = styled.main`
-  min-height: calc(100vh - 50px);
-  padding-top: 50px;
-  padding-bottom: 50px;
 `;

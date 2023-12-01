@@ -1,12 +1,9 @@
-import { Container } from 'components/common/component/Container/Container';
-import { Section } from 'components/common/component/Section/Section';
+import { Container } from '../../shared/components/Container/Container';
+import { Section } from '../../shared/components/Section/Section';
 import React from 'react';
+import { Button } from 'shared/components/Button/Button';
 import { styled } from 'styled-components';
-import {
-  GlobalStyledButton,
-  GlobalStyledLink,
-  GlobalStyledNavLink,
-} from 'styles/GlobalStyle';
+import { GlobalStyledLink, GlobalStyledNavLink } from 'styles/GlobalStyle';
 
 const Home = () => {
   return (
@@ -18,7 +15,7 @@ const Home = () => {
           consectetur at maxime sapiente nobis ab porro assumenda nemo. Ducimus,
           aliquam similique!
         </p>
-        <GlobalStyledButton>GlobalStyledButton</GlobalStyledButton>
+        <Button>Button</Button>
         <GlobalStyledLink>GlobalStyledLink</GlobalStyledLink>
         <GlobalStyledNavLink to="/" $marginRight="10px">
           NavLink

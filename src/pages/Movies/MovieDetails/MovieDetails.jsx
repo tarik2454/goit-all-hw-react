@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Outlet, useLocation, useNavigate, useParams } from 'react-router-dom';
-import { getMovieDetails } from '../../../services/Movies/movies-api-services';
-import { GlobalStyledButton } from '../../../styles/GlobalStyle';
+import { getMovieDetails } from '../../../modules/Movies/services/movies-api-services';
 import {
   StyledCard,
   StyledCardDescription,
@@ -12,13 +11,16 @@ import {
   StyledInner,
   StyledNavLink,
 } from './MovieDetails.styled';
-import { Section } from 'components/common/component/Section/Section';
-import { Container } from 'components/common/component/Container/Container';
+import { Section } from '../../../shared/components/Section/Section';
+import { Container } from '../../../shared/components/Container/Container';
+import { Button } from 'shared/components/Button/Button';
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState({});
+
   const navigate = useNavigate();
   const location = useLocation();
+
   const { movieId } = useParams();
 
   useEffect(() => {
@@ -38,13 +40,13 @@ const MovieDetails = () => {
   return (
     <Section title={movie.title}>
       <Container>
-        <GlobalStyledButton
+        <Button
           $padding="7px 10px"
           $margin="0 0 15px 0"
           onClick={() => navigate(backLink.current)}
         >
           Go back
-        </GlobalStyledButton>
+        </Button>
         {/* <Link to={backLink}>Go back</Link> */}
 
         <StyledCard>
