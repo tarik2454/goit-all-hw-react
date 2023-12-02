@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 import { styled } from 'styled-components';
@@ -6,7 +6,10 @@ import { styled } from 'styled-components';
 import { Cast } from './modules/Movies/componets/Cast/Cast';
 import { Reviews } from './modules/Movies/componets/Reviews/Reviews';
 import { Layout } from './shared/Layout/Layout';
+import { PrivateRoute } from 'shared/routes/PrivateRoute';
+import { PublicRoute } from 'shared/routes/PublicRoute';
 
+const Signin = lazy(() => import('pages/Signin/Signin'));
 const HomeMovies = lazy(() => import('./pages/Home/Home'));
 const Contacts = lazy(() => import('pages/Contacts/Contacts'));
 const TopMovies = lazy(() => import('./pages/Movies/TopMovies'));
@@ -21,6 +24,12 @@ const LeaveRequestForm = lazy(() =>
 );
 
 export const App = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleClick = () => {
+    setIsLoggedIn(true);
+  };
+
   return (
     <Suspense>
       <Routes>
@@ -35,9 +44,26 @@ export const App = () => {
             <Route path="reviews" element={<Reviews />} />
           </Route>
 
-          <Route path="/leave-request" element={<LeaveRequestForm />} />
-
           <Route path="/contacts" element={<Contacts />} />
+
+          <Route
+            path="/signin"
+            element={
+              <PublicRoute isLoggedIn={isLoggedIn}>
+                <Signin handleClick={handleClick} />
+              </PublicRoute>
+            }
+          />
+
+          <Route
+            path="/leave-request"
+            element={
+              <PrivateRoute isLoggedIn={isLoggedIn}>
+                <LeaveRequestForm />
+              </PrivateRoute>
+            }
+          />
+
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

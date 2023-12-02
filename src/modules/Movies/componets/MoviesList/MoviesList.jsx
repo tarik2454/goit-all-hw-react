@@ -17,14 +17,14 @@ export const MoviesList = ({ movies }) => {
             <StyledImage
               $marginBottom="3px"
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+              width="225"
+              height="337"
               alt=""
             />
             <StyledContent>
-              {(movie.title && (
-                <GlobalStyledH2 $textAlign="left" $marginBottom="0">
-                  {movie.title}
-                </GlobalStyledH2>
-              )) || <GlobalStyledH2 $marginBottom="0">No name</GlobalStyledH2>}
+              <GlobalStyledH2 $textAlign="left" $marginBottom="0">
+                {movie.title || 'No name'}
+              </GlobalStyledH2>
             </StyledContent>
           </StyledWrapper>
         </StyledListItem>
