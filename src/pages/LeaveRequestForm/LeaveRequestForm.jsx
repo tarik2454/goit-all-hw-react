@@ -14,10 +14,10 @@ import {
   dataServices,
 } from 'modules/LeaveRequestForm/data/data-request';
 import { Button } from '../../shared/components/Button/Button';
-import { Form, Input, Textarea } from '../../shared/components/Form/Form';
+import { Form } from '../../shared/components/Form/Form';
 
 export default function LeaveRequestForm() {
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -140,16 +140,16 @@ export default function LeaveRequestForm() {
 
         console.log(formDataForBackend);
 
-        setIsLoading(true);
+        // setIsLoading(true);
 
         const data = await postRequest(formDataForBackend);
         if (data) {
-          setIsLoading(false);
+          // setIsLoading(false);
           handleFormReset();
           localStorage.removeItem('USER_DATA');
         }
       } catch (error) {
-        setIsLoading(false);
+        // setIsLoading(false);
         console.log('Помилка при надсиланні запиту:', error.message);
       }
     return;
